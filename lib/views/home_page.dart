@@ -36,8 +36,15 @@ class _MyHomePageState extends State<MyHomePage> {
             floatingActionButton: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  FloatingActionButton(
+                    onPressed: () {
+                      value.decrement();
+                    },
+                    tooltip: 'Decrement',
+                    child: const Icon(Icons.remove),
+                  ),
                   FloatingActionButton(
                     onPressed: () {
                       value.increment();
