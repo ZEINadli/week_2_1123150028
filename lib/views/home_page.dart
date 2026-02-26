@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:week_2_1123150028/models/counter_model.dart';
 import 'package:provider/provider.dart';
 
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
@@ -12,7 +11,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Consumer<CounterModel>(
@@ -34,15 +32,24 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              value.increment();
-            },
-            tooltip: 'Increment',
-            child: const Icon(Icons.add),
-          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+            floatingActionButton: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  FloatingActionButton(
+                    onPressed: () {
+                      value.increment();
+                    },
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.add),
+                  ),
+                ],
+              ),
+            ),
         );
-      }
+      },
     );
   }
 }
