@@ -7,6 +7,12 @@ class CounterModel extends ChangeNotifier {
 
   void increment() {
     _angka++;
+    notifyListeners();
+  }
+
+  void decrement() {
+    _angka--;
+    notifyListeners();
   }
   
 }
